@@ -17,6 +17,7 @@ public class IpController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ClientAddressDto getClientAddress(ServletRequest servletRequest) {
+//TODO: Account for being behind a reverse proxy.  Detect IP from header if present.
         ClientAddressDto clientAddressDto = new ClientAddressDto();
 
         clientAddressDto.clientAddress = servletRequest.getRemoteAddr();
